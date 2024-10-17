@@ -8,6 +8,8 @@ i = 0
 SameChar = True
 if password[i].isdigit() == True:
     for i in range(1, length, 1):
+        print(password[i].isdigit)
+        print(password[i])
         if password[i].isdigit == False:
             SameChar = False
             break

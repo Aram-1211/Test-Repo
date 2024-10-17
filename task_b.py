@@ -18,6 +18,6 @@ else:
     print("Error: Grades must be between 0 and 100")
     exit()
 
-print(f"Your grade is {letter}")
+print(f"Your grade is: {letter}")
 
     
