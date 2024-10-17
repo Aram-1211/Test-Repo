@@ -1,4 +1,4 @@
-grade = int(input("Enter a grade between 1-100: "))
+grade = int(input("Enter a grade between 0-100: "))
 if isinstance(grade, int) != True:
     print("Error: Please enter a number")
     exit()
