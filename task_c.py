@@ -25,6 +25,6 @@ if SameChar == True:
     validity = False
 
 if validity == True:
-    print("Your password is Valid")
+    print("Your password is valid")
 else:
     print("Your password must contain at least 8 characters, and a mix of letters and numbers")
