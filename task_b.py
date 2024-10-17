@@ -3,6 +3,8 @@ if isinstance(grade, int) != True:
     print("Error: Please enter a number")
     exit()
 
+grade = int(grade)
+
 
 if grade <= 100 and grade >= 80:
     letter = 'A'
