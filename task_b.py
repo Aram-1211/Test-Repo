@@ -1,9 +1,9 @@
-grade = input("Enter a grade between 0-100: " )
-if isinstance(grade, int) != True:
+grade_str = input("Enter a grade between 0-100: " )
+if grade_str.isdigit() == False:
     print("Error: Please enter a number")
     exit()
 
-grade = int(grade)
+grade = int(grade_str)
 
 
 if grade <= 100 and grade >= 80:
