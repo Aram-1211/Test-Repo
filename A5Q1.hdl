@@ -1,0 +1,10 @@
+CHIP A5Q1 {
+    IN x;
+    OUT out[4];
+
+    PARTS:
+    Not (in=a, out=nota);
+    Or (a=nota, b=b, out=x);
+    
+
+}
