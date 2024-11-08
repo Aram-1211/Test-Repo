@@ -6,6 +6,6 @@ CHIP A5Q2201879243 {
     Not (in=d, out=notd);
     Or (a=notd, b=l, out=x);
     Or (a=notd, b=l, out=y);
-    And (a=x, b=y, out=z)
-    And (a=z, b=f, out=output)
+    And (a=x, b=y, out=z);
+    And (a=z, b=f, out=output);
 }
