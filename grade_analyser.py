@@ -33,9 +33,9 @@ Your code will only be tested on valid files in the format shown in the 4 exampl
 import csv
 
 filename = input("Input filename: ")
-with open(f"/workspaces/week-5-worksheet-Aram-1211/task2/{filename}_out.csv", 'w') as newfile:
+with open(f"/workspaces/Test-Repo{filename}_out.csv", 'w') as newfile:
      csv_writer = csv.writer(newfile)
-     with open(f"/workspaces/week-5-worksheet-Aram-1211/task2/{filename}", 'r') as f:
+     with open(f"/workspaces/Test-Repo{filename}", 'r') as f:
           csv_reader = csv.reader(f)
           next(csv_reader, None)
           print(f"/workspaces/week-5-worksheet-Aram-1211/{filename}")
