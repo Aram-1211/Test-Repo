@@ -1,0 +1,11 @@
+CHIP A5Q2201879243 {
+    IN d, l, f;
+    OUT output;
+
+    PARTS:
+    Not (in=d, out=notd);
+    Or (a=notd, b=l, out=x);
+    Or (a=notd, b=l, out=y);
+    And (a=x, b=y, out=z)
+    And (a=z, b=f, out=output)
+}
