@@ -33,9 +33,9 @@ Your code will only be tested on valid files in the format shown in the 4 exampl
 import csv
 
 filename = input("Input filename: ")
-with open(f"{filename}_out.csv", 'w') as newfile:
+with open(f"/autograder/source/{filename}_out.csv", 'w') as newfile:
      csv_writer = csv.writer(newfile)
-     with open(filename, 'r') as f:
+     with open(f"/autograder/source/{filename}", 'r') as f:
           csv_reader = csv.reader(f)
           next(csv_reader, None)
           print(f"/workspaces/week-5-worksheet-Aram-1211/{filename}")
