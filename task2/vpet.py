@@ -12,8 +12,11 @@ class VirtualPet:
         self.hunger = hunger
 
     def play(self):
-        self.energy -= 2
-        self.hunger += 2
+        if self.energy >= 2:
+            self.energy -= 2
+            self.hunger += 2
+        else:
+            print("Too tired to play")
     
     def feed(self):
         self.hunger = max(0, self.hunger - 3)
@@ -22,7 +25,7 @@ class VirtualPet:
         self.energy += 10
     
     def __str__(self):
-        return(f"{self.name} with {self.energy} energy points and 0 hunger level")
+        return(f"{self.name} with {self.energy} energy points and {self.hunger} hunger level")
 
 
 
