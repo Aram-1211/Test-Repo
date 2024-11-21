@@ -6,7 +6,7 @@
 # for the __init__ method
 
 class VirtualPet:
-    def __init__(self, name, energy, hunger):
+    def __init__(self, name, energy=10, hunger=0):
         self.name = name
         self.energy = energy
         self.hunger = hunger
