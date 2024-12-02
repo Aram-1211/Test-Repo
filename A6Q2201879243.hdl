@@ -23,7 +23,7 @@ CHIP A6Q2201879243 {
     And(a=pith, b=ninth, out=seventh);
 
     And(a=a, b=b, out=eighth);
-    And(a=eighth, b=ninth, c=tenth);
+    And(a=eighth, b=ninth, out=tenth);
 
     Or(a=infinityth, b=third, out=eleventh);
     Or(a=eleventh, b=third, out=twelveth);
