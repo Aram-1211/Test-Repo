@@ -3,31 +3,31 @@ CHIP A6Q2201879243 {
     OUT f;
 
     PARTS:
-    Not(in=a, out=xa)
-    Not(in=b, out=xb)
-    Not(in=c, out=xc)
-    Not(in=d, out=xd)
+    Not(in=a, out=xa);
+    Not(in=b, out=xb);
+    Not(in=c, out=xc);
+    Not(in=d, out=xd);
     
-    And(a=xa, b=xb, out=zeroth)
-    And(a=c, b=d, out=second)
-    And(a=zeroth, b=second, out=infinityth)
+    And(a=xa, b=xb, out=zeroth);
+    And(a=c, b=d, out=second);
+    And(a=zeroth, b=second, out=infinityth);
 
-    And(a=xa, b=b, out=first)
-    And(a=xc, b=xd, out=fourth)
-    And(a=first, b=fourth, out=third)
+    And(a=xa, b=b, out=first);
+    And(a=xc, b=xd, out=fourth);
+    And(a=first, b=fourth, out=third);
 
-    And(a=a, b=xb, out=pith)
-    And(a=pith, b=fourth, out=fifth)
+    And(a=a, b=xb, out=pith);
+    And(a=pith, b=fourth, out=fifth);
 
-    And(a=xc, b=d, out=ninth)
-    And(a=pith, b=ninth, out=seventh)
+    And(a=xc, b=d, out=ninth);
+    And(a=pith, b=ninth, out=seventh);
 
-    And(a=a, b=b, out=eighth)
-    And(a=eighth, b=ninth, c=tenth)
+    And(a=a, b=b, out=eighth);
+    And(a=eighth, b=ninth, c=tenth);
 
-    Or(a=infinityth, b=third, out=eleventh)
-    Or(a=eleventh, b=third, out=twelveth)
-    Or(a=twelveth, b=fifth, out=thirteenth)
-    Or(a=thirteenth, b=seventh, out=fourteenth)
-    Or(a=fourteenth, b=tenth, out=f)
+    Or(a=infinityth, b=third, out=eleventh);
+    Or(a=eleventh, b=third, out=twelveth);
+    Or(a=twelveth, b=fifth, out=thirteenth);
+    Or(a=thirteenth, b=seventh, out=fourteenth);
+    Or(a=fourteenth, b=tenth, out=f);
 }
