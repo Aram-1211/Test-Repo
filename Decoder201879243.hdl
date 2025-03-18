@@ -40,7 +40,7 @@ CHIP Decoder201879243 {
     // C
     Or(a = A, b = B, out = XA);
     Or(a = C, b = notD, out = Xb);
-    And(a = XA, b = Xb, out = BvCvNOTD);
+    Or(a = XA, b = Xb, out = BvCvNOTD);
     Or(a = notB, b = notC, out = NBNVNC);
     Or(a = NBNVNC, b = notD, out = NBVNCVND);
     And(a = BvCvNOTD, b = NBVNCVND, out = B1ANDB2);
