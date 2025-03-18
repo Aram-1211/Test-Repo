@@ -20,4 +20,3 @@
     And(a = xy1, b = zw1, out = g);
 }
 
-// huh
