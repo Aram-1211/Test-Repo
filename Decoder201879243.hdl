@@ -67,15 +67,15 @@ CHIP Decoder201879243 {
     // E
     And(a = notA, b = notB, out = FirstBrac);
     And(a = notA, b = notC, out = SecondBrac1);
-    Or(a = SecondBrac1, b = notD, out = SecondBrac);
-    Or(a = FirstBrac, b = SecondBrac, out = FBrac);
+    And(a = SecondBrac1, b = notD, out = SecondBrac);
+    Or(a = FirstBrac, b = SecondBrac, out = FBorSB);
     And(a = notA, b = C, out = ThirdBrac1);
     And(a = ThirdBrac1, b = D, out = ThirdBrac);
     And(a = notB, b = notD, out = FourthBrac);
-    Or(a = ThirdBrac, b = FourthBrac, out = TBrac);
+    Or(a = ThirdBrac, b = FourthBrac, out = TBorFTHB;
     And(a = A, b = notC, out = FifthBrac1);
     And(a = FifthBrac1, b = D, out = FifthBrac);
-    Or(a = FBrac, b = TBrac, out = A1orA2);
+    Or(a = FBorSB, b = TBorFTHB, out = A1orA2);
     Or(a = A1orA2, b = FifthBrac, out = e);
 
     // F
