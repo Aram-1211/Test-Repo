@@ -5,8 +5,8 @@
     PARTS:
     Not(in=A, out=notA);
     Not(in=B, out=notB);
-    Not(in=C), out=notC);
-    Not(in=D), out=notD);
+    Not(in=C, out=notC);
+    Not(in=D, out=notD);
 
     Or(a = A, b = B, out = x1);
     Or(a = x1, b = notD, out = x2);
