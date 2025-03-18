@@ -24,7 +24,7 @@ CHIP Decoder201879243 {
     Or(a=A, b=B, out=ORoneB);
     Or(a=C, b=notD, out=ORtwoB);
     Or(a=ORoneB, b=ORtwoB, out=ORabcd);
-    Or(a = notA, b = notB, out = ORthreeB);
+    Or(a = A, b = notB, out = ORthreeB);
     Or(a=C, b=D, out=ORfourB);
     Or(a = ORthreeB, b = ORfourB, out = ORfiveB);
     And(a = ORabcd, b = ORfiveB, out = ANDoneB);
