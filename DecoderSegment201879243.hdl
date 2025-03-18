@@ -11,6 +11,7 @@
     Or(a = A, b = B, out = x1);
     Or(a = x1, b = notD, out = x2);
     Or(a=x1, b=notC, out=y1);
+    Or(a=x2, b=y1, out=xy1);
     Or(a = A, b = notC, out = z1);
     Or(a = z1, b = notD, out = z2);
     Or(a = notA, b = notB, out = w1);
