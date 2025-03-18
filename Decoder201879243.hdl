@@ -57,7 +57,8 @@ CHIP Decoder201879243 {
     Or(a = notA, b = notB, out = X1);
     Or(a = X1, b = notC, out = X2);
     Or(a = notA, b = notB, out = Y1);
-    Or(a = Y1, b = D, out = Y3);
+    Or(a=C, b=D, out=Y2)
+    Or(a = Y1, b = Y2, out = Y3);
     And(a = X2, b = Y3, out = XY1);
     Or(a = A, b = B, out = Z1);
     Or(a = notC, b = D, out = Z2);
