@@ -1,4 +1,4 @@
- CHIP DecoderSegmentG {
+ CHIP DecoderSegmentDecoderSegment201879243 {
     IN A,B,C,D;
     OUT g;
  
@@ -7,7 +7,7 @@
     Not(in=B, out=notB)
     Not(in=C), out=notC)
     Not(in=D), out=notD)
-    
+
     Or(a = A, b = B, out = x1);
     Or(a = x1, b = notD, out = x2);
     Or(a=x1, b=notC, out=y1);
