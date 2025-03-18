@@ -99,4 +99,4 @@ CHIP Decoder201879243 {
     And(a = z2, b = w3, out = zw1);
     And(a = xy1, b = zw1, out = g);
 }
-}
+
