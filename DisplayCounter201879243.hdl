@@ -13,10 +13,10 @@ CHIP DisplayCounter201879243 {
     And16(a=number, b=0000_0000_0000_0010, out=bit1full);
     And16(a=number, b=0000_0000_0000_0001, out=bit0full);
 
-    Or8Way(in=bit3full[7..0], out=a);
-    Or8Way(in=bit2full[7..0], out=b);
-    Or8Way(in=bit1full[7..0], out=c);
-    Or8Way(in=bit0full[7..0], out=d);
+    Or8Way(in=bit3full[7..0], out=a3);
+    Or8Way(in=bit2full[7..0], out=a2);
+    Or8Way(in=bit1full[7..0], out=a1);
+    Or8Way(in=bit0full[7..0], out=a0);
 
-    Decoder201879243(A=a, B=b, C=c, D=d, a=a, b=b, c=c, d=d, e=e, f=f, g=g);
+    Decoder201879243(A=a3, B=a2, C=a1, D=a0, a=a, b=b, c=c, d=d, e=e, f=f, g=g);
 }
