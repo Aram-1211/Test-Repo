@@ -8,10 +8,10 @@ CHIP DisplayCounter201879243 {
     Mux16(a=incremented, b=false, sel=reset, out=next);
     Mux16(a=number, b=next, sel=inc, out=input);
 
-    And16(a=number, b=0000_0000_0000_1000, out=bit3);
-    And16(a=number, b=0000_0000_0000_0100, out=bit2);
-    And16(a=number, b=0000_0000_0000_0010, out=bit1);
-    And16(a=number, b=0000_0000_0000_0001, out=bit0);
+    And16(a=number, b=mask8, out=bit3);
+    And16(a=number, b=mask4, out=bit2);
+    And16(a=number, b=mask2, out=bit1);
+    And16(a=number, b=mask1, out=bit0);
 
     Or16Way(in=bit3, out=A);
     Or16Way(in=bit2, out=B);
