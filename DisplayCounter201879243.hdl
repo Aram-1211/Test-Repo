@@ -7,9 +7,9 @@ CHIP DisplayCounter201879243 {
     Inc16(in=number, out=incremented);
     Mux16(a=incremented, b=false, sel=reset, out=next);
     Mux16(a=number, b=next, sel=inc, out=input);
-    Mux16(a= false, b=true, sel=number[0], out=fourth)
-    Mux16(a= false, b=true, sel=number[1], out=third)
-    Mux16(a= false, b=true, sel=number[0], out=second)
-    Mux16(a= false, b=true, sel=number[0], out=first)
-    Decoder201879243(A=fourth, B=third, C=second, D=fourth, a=a, b=b, c=c, d=d, e=e, f=f, g=g);
+    Mux16(a= false, b=true, sel=number[0], out=firstx)
+    Mux16(a= false, b=true, sel=number[1], out=secondx)
+    Mux16(a= false, b=true, sel=number[0], out=thirdx)
+    Mux16(a= false, b=true, sel=number[0], out=fourthx)
+    Decoder201879243(A=fourthx, B=thirdx, C=secondx, D=fourthx, a=a, b=b, c=c, d=d, e=e, f=f, g=g);
 }
