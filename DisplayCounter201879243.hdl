@@ -4,7 +4,7 @@ CHIP DisplayCounter201879243 {
 
     PARTS:
     Register(in=input, load=true, out[0..3]=number);
-    Inc4(in=number, out[0..3]=incremented);
+    Inc16(in=number, out[0..3]=incremented);
     Mux4(a=incremented, b=false, sel=reset, out[0..3]=next);
     Mux4(a=number, b=next, sel=inc, out[0..3]=input);
     Mux4(a=false, b=true, sel=number[3], out=D);
