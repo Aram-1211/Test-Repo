@@ -3,15 +3,10 @@ CHIP DisplayCounter201879243 {
     OUT a,b,c,d,e,f,g;
 
     PARTS:
-    Register(in=input, load=true, out[0..3]=number);
-    Inc16(in=number, out[0..3]=incremented);
-    Mux4(a=incremented, b=false, sel=reset, out[0..3]=next);
-    Mux4(a=number, b=next, sel=inc, out[0..3]=input);
-    Mux4(a=false, b=true, sel=number[3], out=D);
-    Mux4(a=false, b=true, sel=number[2], out=C);
-    Mux4(a=false, b=true, sel=number[1], out=B);
-    Mux4(a=false, b=true, sel=number[0], out=a);
+    Register(in=input, load=true, out=number);
+    Inc16(in=number, out=incremented);
+    Mux16(a=incremented, b=false, sel=reset, out=next);
+    Mux16(a=number, b=next, sel=inc, out=input);
 
-    
-    Decoder201879243(A=A, B=B, C=C, D=D, a=a, b=b, c=c, d=d, e=e, f=f, g=g);
+    Decoder201879243(A=number[3], B=number[2], C=number[1], D=number[0], a=a, b=b, c=c, d=d, e=e, f=f, g=g);
 }
