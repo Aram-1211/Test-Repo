@@ -104,7 +104,7 @@ CHIP P2S {
     Mux16(a=lower, b=higher, sel=bit2, out[0]=sout);
 
     And(a=bit1, b=bit2, out=complete);
-    Bit(in=cpmplete, load=true, out=done);
+    Bit(in=complete, load=true, out=done);
     Not(in=done, out=notdone);
     And(a=enable, b=notdone, out=run);
 }
