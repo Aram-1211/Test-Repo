@@ -92,8 +92,11 @@ CHIP P2S {
     Register(in=in16data2, load=load, out=data2);
     Register(in=in16data3, load=load, out=data3);
 
-    Bit(in=nextbit1, load=run, out=bit1);
-    Bit(in=nextbit2, load=run, out=bit2);
+    Mux(a=bit1, b=nextbit1, sel=run, out=bit1in);
+    Bit(in=bit1in, load=true, out=bit1);
+    Mux(a=bit2, b=nextbit2, sel=run, out=bit2in);
+    Bit(in=bit2in, load=true, out=bit2);
+
     
     Xor(a=bit1, b=true, out=nextbit1);
     And(a=bit1, b=true, out=bit1now1);
