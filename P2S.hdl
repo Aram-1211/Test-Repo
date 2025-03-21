@@ -1,0 +1,110 @@
+CHIP P2S {
+    IN indata[4], enable, load;
+    OUT sout, complete;
+
+    PARTS:
+    And16(
+        a[0]=indata[0],
+        a[1]=false,
+        a[2]=false,
+        a[3]=false,
+        a[4]=false,
+        a[5]=false,
+        a[6]=false,
+        a[7]=false,
+        a[8]=false,
+        a[9]=false,
+        a[10]=false,
+        a[11]=false,
+        a[12]=false,
+        a[13]=false,
+        a[14]=false,
+        a[15]=false,
+        b=true,
+        out=in16data0
+    );
+
+     And16(
+        a[0]=indata[1],
+        a[1]=false,
+        a[2]=false,
+        a[3]=false,
+        a[4]=false,
+        a[5]=false,
+        a[6]=false,
+        a[7]=false,
+        a[8]=false,
+        a[9]=false,
+        a[10]=false,
+        a[11]=false,
+        a[12]=false,
+        a[13]=false,
+        a[14]=false,
+        a[15]=false,
+        b=true,
+        out=in16data1
+    );
+
+     And16(
+        a[0]=indata[2],
+        a[1]=false,
+        a[2]=false,
+        a[3]=false,
+        a[4]=false,
+        a[5]=false,
+        a[6]=false,
+        a[7]=false,
+        a[8]=false,
+        a[9]=false,
+        a[10]=false,
+        a[11]=false,
+        a[12]=false,
+        a[13]=false,
+        a[14]=false,
+        a[15]=false,
+        b=true,
+        out=in16data2
+    );
+
+     And16(
+        a[0]=indata[3],
+        a[1]=false,
+        a[2]=false,
+        a[3]=false,
+        a[4]=false,
+        a[5]=false,
+        a[6]=false,
+        a[7]=false,
+        a[8]=false,
+        a[9]=false,
+        a[10]=false,
+        a[11]=false,
+        a[12]=false,
+        a[13]=false,
+        a[14]=false,
+        a[15]=false,
+        b=true,
+        out=in16data3
+    );
+
+    Register(in=in16data0, load=load, out=data0);
+    Register(in=in16data1, load=load, out=data1);
+    Register(in=in16data2, load=load, out=data2);
+    Register(in=in16data3, load=load, out=data3);
+
+    Bit(in=nextbit1, load=run, out=bit1);
+    Bit(in=nextbit2, load=run, out=bit2);
+    
+    Xor(a=bit1, b=true, out=nextbit1);
+    And(a=bit1, b=true, out=bit1now1);
+    Xor(a=bit2, b=bit1now1, out=nextbit2);
+
+    Mux16(a=data0, b=data1, sel=bit1, out=lower);
+    Mux16(a=data2, b=data3, sel=bit1, out=higher);
+    Mux16(a=lower, b=higher, sel=bit2, out[0]=sout);
+
+    And(a=bit1, b=bit2, out=complete);
+    Bit(in=cpmplete, load=true, out=done);
+    Not(in=done, out=notdone);
+    And(a=enable, b=notdone, out=run);
+}
